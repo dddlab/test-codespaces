@@ -1,8 +1,8 @@
 # See here for image contents: https://hub.docker.com/r/jupyter/datascience-notebook/
 
-FROM jupyter/r-notebook
+FROM jupyter/r-notebook:aa14e4498c6b
 
-COPY library-scripts/common-debian.sh /tmp/library-scripts/
+# COPY library-scripts/common-debian.sh /tmp/library-scripts/
 COPY --chown="${NB_UID}:${NB_GID}" library-scripts/rstudio-url.sh /opt/conda/bin/
 
 USER root
