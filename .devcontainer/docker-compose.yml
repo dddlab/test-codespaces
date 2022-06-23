@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+
+  rstudio:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: my-rstudio-image:latest
+    ports:
+      - "8888:8888"
+    command: >
+      bash -c "
+      start-notebook.sh
+      --ServerApp.custom_display_url='http://127.0.0.1:8888/rstudio'
+      "
